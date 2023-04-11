@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
-import Button from '../components/Button';
+import { View, Button } from 'react-native';
 import { useNavigation, useRoute } from '@react-navigation/native';
 
 const Option2Screen = () => {
@@ -10,15 +9,16 @@ const Option2Screen = () => {
   const [selectedOptions, setSelectedOptions] = useState(optionsFromPreviousScreen);
 
   const handleOptionPress = (option) => {
-    setSelectedOptions([...selectedOptions, option]);
+    const newOptions = [...optionsFromPreviousScreen, option];
+    setSelectedOptions(newOptions);
   };
 
   const goToAllOptions = () => navigation.navigate('AllOptions', { selectedOptions });
 
   return (
     <View>
-      <Button title="Option 2 - Choice 1" onPress={() => handleOptionPress('Choice 1')} />
-      <Button title="Option 2 - Choice 2" onPress={() => handleOptionPress('Choice 2')} />
+      <Button title="Bohimian Style" onPress={() => handleOptionPress('Bohimian')} />
+      <Button title="Lolita Style" onPress={() => handleOptionPress('Lolita')} />
       <Button title="Next" onPress={goToAllOptions} />
     </View>
   );

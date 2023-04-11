@@ -5,6 +5,7 @@ import { useRoute } from '@react-navigation/native';
 const AllOptionsScreen = () => {
   const route = useRoute();
   const { selectedOptions } = route.params;
+  
 
   return (
     <View>
@@ -12,6 +13,7 @@ const AllOptionsScreen = () => {
         <Text key={index}>{option}</Text>
       ))}
     </View>
+    
   );
 };
 
