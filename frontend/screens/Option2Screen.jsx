@@ -17,8 +17,9 @@ const Option2Screen = () => {
 
   return (
     <View>
-      <Button title="Bohimian Style" onPress={() => handleOptionPress('Bohimian')} />
-      <Button title="Lolita Style" onPress={() => handleOptionPress('Lolita')} />
+      <Button title="children" onPress={() => handleOptionPress('children')} />
+      <Button title="teenage" onPress={() => handleOptionPress('teenage')} />
+      <Button title="adult" onPress={() => handleOptionPress('adult')} />
       <Button title="Next" onPress={goToAllOptions} />
     </View>
   );
