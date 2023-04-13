@@ -29,25 +29,25 @@ const Option1Screen = () => {
   const handleOptionPress = (option) => {
     let arr;
     switch(option) {
-      case 'จ':
+      case 'Monday':
         arr = ['ส้ม','เหลือง','เขียว','เทา','ม่วง', 'น้ำตาล'];
         break;
-      case 'อ':
+      case 'Tuesday':
         arr = ['เงิน','ทอง','เทา','น้ำเงิน','แดง','ส้ม'];
         break;
-      case 'พ':
+      case 'Wednesday':
         arr = ['ฟ้า','เหลือง','ส้ม','ขาว','เงิน','ทอง'];
         break;
-      case 'พฤ':
+      case 'Wednesdayฤ':
         arr = ['ขาว','เหลือง','น้ำเงิน','แดง','น้ำตาล','ฟ้า'];
         break;
       case 'ศ':
         arr = ['ขาว','เหลือง','น้ำเงิน','น้ำตาล','เขียว','ฟ้า'];
         break;
-      case 'ส':
+      case 'Saturday':
         arr = ['แดง','เงิน','ทอง','ชมพู','ฟ้า','ดำ'];
         break;
-      case 'อา':
+      case 'Sunday':
         arr = ['ม่วง','เทา','แดง','ส้ม','เหลือง','เขียว'];
         break;
       default:
@@ -60,15 +60,26 @@ const Option1Screen = () => {
   
 
   return (
-    <View style={styles.container}>
-      <CustomButton title="จ" onPress={() => handleOptionPress("จ")}  backgroundColor="black" width={'10%'} isSelected={selectedOptions.includes('จ')} />
-      <CustomButton title="อ" onPress={() => handleOptionPress("อ")} backgroundColor="black" width={'10%'} isSelected={selectedOptions.includes('อ')} />
-      <CustomButton title="พ" onPress={() => handleOptionPress("พ")} backgroundColor="black" width={'10%'} isSelected={selectedOptions.includes('พ')} />
-      <CustomButton title="พฤ" onPress={() => handleOptionPress("พฤ")} backgroundColor="black" width={'10%'} isSelected={selectedOptions.includes('พฤ')} />
-      <CustomButton title="ศ" onPress={() => handleOptionPress("ศ")} backgroundColor="black" width={'10%'} isSelected={selectedOptions.includes('ศ')} />
-      <CustomButton title="ส" onPress={() => handleOptionPress("ส")} backgroundColor="black" width={'10%'} isSelected={selectedOptions.includes('ส')} />
-      <CustomButton title="อา" onPress={() => handleOptionPress("อา")} backgroundColor="black" width={'10%'} isSelected={selectedOptions.includes('อา')} />
+    <View style={[styles.container, {backgroundColor: '#ea1b15'}]}>
+      <View style={styles.card}>
+      <View style={styles.buttonRow}>
+      </View>
+      <View style={styles.buttonRow}>
+      <CustomButton title="Monday" onPress={() => handleOptionPress("Monday")}  backgroundColor="black" width={'110px'} isSelected={selectedOptions.includes('Monday')} />
+      <CustomButton title="Tuesday" onPress={() => handleOptionPress("Tuesday")} backgroundColor="black" width={'110px'} isSelected={selectedOptions.includes('Tuesday')} />
+      </View>
+      <View style={styles.buttonRow}>
+      <CustomButton title="Wednesday" onPress={() => handleOptionPress("Wednesday")} backgroundColor="black" width={'110px'} isSelected={selectedOptions.includes('Wednesday')} />
+      <CustomButton title="Thursday" onPress={() => handleOptionPress("Wednesdayฤ")} backgroundColor="black" width={'110px'} isSelected={selectedOptions.includes('Wednesdayฤ')} />
+      <CustomButton title="Friday" onPress={() => handleOptionPress("Friday")} backgroundColor="black" width={'110px'} isSelected={selectedOptions.includes('Friday')} />
+
+      </View>
+      <View style={styles.buttonRow}>      
+     <CustomButton title="Saturday" onPress={() => handleOptionPress("Saturday")} backgroundColor="black" width={'110px'} isSelected={selectedOptions.includes('Saturday')} />
+      <CustomButton title="Sunday" onPress={() => handleOptionPress("Sunday")} backgroundColor="black" width={'110px'} isSelected={selectedOptions.includes('Sunday')} />
+      </View>
       <CustomButton title="Next" onPress={goToOption2} backgroundColor="#ff6347" width={250} />
+    </View>
     </View>
   );
 };
@@ -90,6 +101,33 @@ const styles = StyleSheet.create({
     fontFamily: 'Kanit_400Regular',
     fontSize: 16,
     textAlign: 'center',
+  },
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+  },
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 20,
+    shadowColor: 'black',
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 10,
+    elevation: 5,
+    alignItems: 'center',
+    height: '500px',
+    justifyContent: 'center',
+    width: '95%'
+  },
+  buttonRow: {
+    flexDirection: 'row',
+    width: '90%',
+    justifyContent: 'space-around',
+    paddingBottom:'40px',
+    paddingHorizontal:'100px'
   },
 });
 
