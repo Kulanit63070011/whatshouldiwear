@@ -5,7 +5,7 @@ import { useFonts, Kanit_400Regular, Kanit_600SemiBold } from '@expo-google-font
 
 const HomeScreen = () => {
   const navigation = useNavigation();
-  const goToOption1 = () => navigation.navigate('selected1');
+  const goToOption1 = () => navigation.navigate('Option1');
   const [fontsLoaded] = useFonts({
     Kanit_400Regular,
     Kanit_600SemiBold,

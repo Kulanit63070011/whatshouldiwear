@@ -17,7 +17,8 @@ const AllOptionsScreen = () => {
   // }, []);
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: '#ea1b15'}]}>
+      <View style={styles.card}>
       <Text style={styles.title}>Selected Options:</Text>
       {selectedOptions.map((option, index) => (
         <Text key={index} style={styles.option}>
@@ -28,6 +29,7 @@ const AllOptionsScreen = () => {
         <Text>Random Word: {randomColor}</Text>
       )} */}
     </View>
+    </View>
   );
 };
 
@@ -37,6 +39,20 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: 'white',
+  },
+  card: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    padding: 20,
+    shadowColor: 'black',
+    shadowOpacity: 0.25,
+    shadowOffset: { width: 0, height: 2 },
+    shadowRadius: 10,
+    elevation: 5,
+    alignItems: 'center',
+    height: '500px',
+    justifyContent: 'center',
+    width: '95%'
   },
   title: {
     fontSize: 20,
